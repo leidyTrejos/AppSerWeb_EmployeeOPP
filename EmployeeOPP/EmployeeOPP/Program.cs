@@ -54,7 +54,6 @@ try
     //Mostramos el objeto - el ToString() viene por default
     Console.WriteLine(salaryEmployee);
 
-
     //CLASE HOURLY EMPLOYEE
     HourlyEmployee hourlyEmployee = new HourlyEmployee()
     {
@@ -72,7 +71,24 @@ try
     //Mostramos el objeto
     Console.WriteLine(hourlyEmployee);
 
-   
+
+    //CLASE HOURLY EMPLOYEE
+    BaseCommissionEmployee BaseCommissionEmployee = new BaseCommissionEmployee()
+    {
+        //Defino propiedades que se encuentran en la clase padre y en la misma clase
+        Id = 123456,
+        FirstName = Console.ReadLine(),
+        LastName = Console.ReadLine(),
+        Birthdate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        CommissionPercentaje= 19,
+        Sales= 2,
+        Base= 1000000
+    };
+
+    //Mostramos el objeto
+    Console.WriteLine(BaseCommissionEmployee);
 
 }
 catch (Exception ex)

@@ -21,7 +21,7 @@ namespace EmployeeOPP.Clases
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $"Salario base + Comisiones: {((CommissionPercentaje / 100) * Sales):C2}\n\t";
+                $"Salario base + Comisiones: {((CommissionPercentaje / 100) * Sales)+Base:C2}\n\t";
         }
         #endregion
     }

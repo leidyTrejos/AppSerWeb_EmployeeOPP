@@ -8,10 +8,7 @@
         #endregion
 
         #region Methods
-        public SalaryEmployee()
-        {
-            
-        }
+        public SalaryEmployee() {}
         public override decimal GetValueToPay()
         {
             return Salary;

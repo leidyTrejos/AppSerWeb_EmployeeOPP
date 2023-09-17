@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-
-using EmployeeOPP.Clases;
+﻿using System.Runtime.Serialization;
 
 namespace EmployeeOPP.Clases
 {
@@ -21,7 +14,7 @@ namespace EmployeeOPP.Clases
         #endregion
 
         #region Methods
-        public Date(int day, int month,int year)
+        public Date(int day, int month, int year)
         {
             _year = validateYear(year);
             _month = validateMonth(month);
@@ -31,12 +24,12 @@ namespace EmployeeOPP.Clases
         private int validateDay(int day, int month, int year)
         {
             //valido si ek dia ingresado pertenece a un año bisiesto
-            if(month == 2 && day == 29 && IsLeapYear(year))
+            if (month == 2 && day == 29 && IsLeapYear(year))
             {
                 return day;
             }
-            
-            if(month == 2 && day == 29 && IsLeapYear(year))
+
+            if (month == 2 && day == 29 && IsLeapYear(year))
             {
                 bool isLeapYear = false;
                 IsLeapYearException(isLeapYear, year);
@@ -62,12 +55,12 @@ namespace EmployeeOPP.Clases
                 //Exeception creation
                 throw new YearException(String.Format("El año {0} es biciesto", year));
             }
-            
+
         }
 
         private bool IsLeapYear(int year)
         {
-            return year % 400 == 0 || year % 4 == 0 && year % 100 !=0;
+            return year % 400 == 0 || year % 4 == 0 && year % 100 != 0;
         }
 
         //validate year
@@ -98,7 +91,8 @@ namespace EmployeeOPP.Clases
             }
         }
 
-        public override string ToString() {
+        public override string ToString()
+        {
             //dia/mes/año
 
             //Concatenacion basica
@@ -108,8 +102,8 @@ namespace EmployeeOPP.Clases
             //string dateConcatenated = $"{_day:00}/{_month:00}/{_year:0000}";
 
             //Concatenacion con la clase String.Format
-            string dateConcatenated = String.Format("{0:00}/{1:00}/{2:00}", _day,_month,_year);
-            
+            string dateConcatenated = String.Format("{0:00}/{1:00}/{2:00}", _day, _month, _year);
+
             //retorno
             return dateConcatenated;
         }
